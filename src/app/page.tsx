@@ -1,30 +1,15 @@
 import SearchBar from '@/components/layout/SearchBar';
-import StoryCircle from '@/components/features/StoryCircle';
 import LocationCard from '@/components/features/LocationCard';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 
 export default function Home() {
-  // Données pour les stories
-  const stories = [
-    {
-      imageUrl: 'https://picsum.photos/id/1062/200/200', // Personne plage
-      hasPlay: true
-    },
-    {
-      imageUrl: 'https://picsum.photos/id/1066/200/200' // Femme
-    },
-    {
-      imageUrl: 'https://picsum.photos/id/177/200/200' // Deux personnes
-    }
-  ];
-
   return (
     <div className='flex flex-col w-full'>
       <div className='flex flex-col lg:flex-row lg:gap-8'>
         {/* Colonne gauche - Texte et recherche */}
-        <div className='flex flex-col justify-center pt-0 pb-10 lg:py-16 lg:w-5/12'>
-          <h1 className='text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6'>
+        <div className='flex flex-col justify-start pt-0 pb-10 lg:pt-0 lg:pb-16 lg:w-5/12'>
+          <h1 className='text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-8'>
             Inspiring
             <br />
             Locations
@@ -32,37 +17,18 @@ export default function Home() {
             to Lodge
           </h1>
 
-          <p className='text-gray-600 mb-8 max-w-md'>
+          <p className='text-lg md:text-xl text-gray-600 mb-10 max-w-md'>
             Create memorable travel moments by choosing a designer house with a
             warm ambiance as your accommodation.
           </p>
 
           <SearchBar />
-
-          {/* Section des stories */}
-          <div className='py-8 mt-8 flex items-center'>
-            <div className='relative w-20 h-20 flex items-center justify-center'>
-              <div className='absolute w-full h-full border border-gray-200 rounded-full flex flex-col items-center justify-center'>
-                <span className='text-xs uppercase'>Stories</span>
-              </div>
-            </div>
-
-            <div className='flex ml-6 space-x-5'>
-              {stories.map((story, index) => (
-                <StoryCircle
-                  key={index}
-                  imageUrl={story.imageUrl}
-                  title={story.hasPlay ? undefined : ''}
-                />
-              ))}
-            </div>
-          </div>
         </div>
 
         {/* Colonne droite - Contenu visuel */}
         <div className='lg:w-7/12 flex flex-col'>
           {/* Image principale */}
-          <div className='relative min-h-[350px] lg:h-[580px] overflow-hidden rounded-3xl mb-6'>
+          <div className='relative min-h-[350px] lg:h-[600px] overflow-hidden rounded-3xl mb-6'>
             <Image
               src='https://picsum.photos/id/308/1400/800'
               alt='Luxury interior'

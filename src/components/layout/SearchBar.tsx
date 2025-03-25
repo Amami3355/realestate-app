@@ -10,7 +10,7 @@ const SearchBar = () => {
         placeholder='Find Inspiring Places'
         className='w-full h-full pl-6 pr-14 text-black outline-none'
       />
-      <button className='absolute right-0 top-0 bottom-0 flex items-center justify-center w-14 bg-black text-white hover:bg-gray-800 transition-colors'>
+      <button className='absolute right-3 top-1/2 -translate-y-1/2 flex items-center justify-center w-10 h-10 bg-black text-white hover:bg-gray-800 transition-colors rounded-full'>
         <Search className='h-5 w-5' />
       </button>
     </div>
