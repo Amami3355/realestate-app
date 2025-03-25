@@ -68,6 +68,7 @@ export default function Home() {
                 <LocationCard
                   imageUrl='https://picsum.photos/id/164/800/800'
                   title='Desert Escapes'
+                  mainTitle='Recommended Places'
                 />
               </div>
 
@@ -76,6 +77,7 @@ export default function Home() {
                 <LocationCard
                   imageUrl='https://picsum.photos/id/143/800/800'
                   title='Island Paradise'
+                  mainTitle='Private Island Rentals'
                 />
               </div>
             </div>
