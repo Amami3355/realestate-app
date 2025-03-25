@@ -15,22 +15,16 @@ const Header = () => {
         {/* Navigation */}
         <nav className='hidden md:flex items-center space-x-10'>
           <Link
-            href='/cabins-cottages'
+            href='/'
             className='text-black text-sm tracking-wider hover:text-gray-700 transition-colors'
           >
-            CABINS & COTTAGES
+            HOME
           </Link>
           <Link
-            href='/entire-homes'
+            href='/mirror-house'
             className='text-black text-sm tracking-wider hover:text-gray-700 transition-colors'
           >
-            ENTIRE HOMES
-          </Link>
-          <Link
-            href='/unique-stays'
-            className='text-black text-sm tracking-wider hover:text-gray-700 transition-colors'
-          >
-            UNIQUE STAYS
+            MIRROR HOUSE
           </Link>
         </nav>
       </div>
