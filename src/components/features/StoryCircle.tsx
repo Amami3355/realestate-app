@@ -5,19 +5,30 @@ import { Play } from 'lucide-react';
 
 interface StoryCircleProps {
   imageUrl: string;
-  title: string;
+  title?: string;
 }
 
 const StoryCircle = ({ imageUrl, title }: StoryCircleProps) => {
   return (
-    <div className='flex flex-col items-center'>
-      <div className='relative w-20 h-20 rounded-full overflow-hidden border-2 border-gray-200 mb-2'>
-        <Image src={imageUrl} alt={title} fill className='object-cover' />
-        <div className='absolute inset-0 flex items-center justify-center bg-black bg-opacity-20'>
-          <Play className='h-6 w-6 text-white' fill='white' />
-        </div>
+    <div className='flex flex-col items-center relative'>
+      <div className='relative w-[60px] h-[60px] rounded-full overflow-hidden border-[1px] border-gray-300'>
+        <Image
+          src={imageUrl}
+          alt={title || 'Story'}
+          fill
+          className='object-cover grayscale'
+        />
       </div>
-      <span className='text-sm text-gray-600 text-center'>{title}</span>
+      {title && (
+        <span className='text-xs text-gray-600 text-center mt-1'>{title}</span>
+      )}
+      {!title && (
+        <div className='absolute inset-0 flex items-center justify-center'>
+          <div className='w-10 h-10 rounded-full bg-black bg-opacity-70 flex items-center justify-center'>
+            <Play className='h-4 w-4 text-white fill-white' />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
