@@ -1,103 +1,147 @@
-import Image from "next/image";
+import SearchBar from '@/components/layout/SearchBar';
+import PropertyCard from '@/components/features/PropertyCard';
+import StoryCircle from '@/components/features/StoryCircle';
+import FeatureCard from '@/components/features/FeatureCard';
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  // Données fictives pour les propriétés
+  const properties = [
+    {
+      id: '1',
+      imageUrl: 'https://picsum.photos/id/1039/540/320', // Montagnes
+      title: 'Chalet de Montagne Luxueux',
+      location: 'Alpes Suisses',
+      price: 350
+    },
+    {
+      id: '2',
+      imageUrl: 'https://picsum.photos/id/188/540/320', // Maison près de l'eau
+      title: 'Villa Vue sur Océan',
+      location: 'Costa Brava, Espagne',
+      price: 420
+    },
+    {
+      id: '3',
+      imageUrl: 'https://picsum.photos/id/380/540/320', // Intérieur moderne
+      title: 'Penthouse Design Contemporain',
+      location: 'Berlin, Allemagne',
+      price: 280
+    }
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  // Données fictives pour les histoires
+  const stories = [
+    {
+      imageUrl: 'https://picsum.photos/id/152/200/200', // Scène hivernale
+      title: "Aventures d'Hiver"
+    },
+    {
+      imageUrl: 'https://picsum.photos/id/110/200/200', // Coucher de soleil
+      title: 'Escapades Plage'
+    },
+    {
+      imageUrl: 'https://picsum.photos/id/184/200/200', // Forêt
+      title: 'Retraites Nature'
+    },
+    {
+      imageUrl: 'https://picsum.photos/id/177/200/200', // Architecture
+      title: 'Design et Luxe'
+    }
+  ];
+
+  return (
+    <div className='flex flex-col items-center w-full'>
+      {/* Section Hero */}
+      <section className='w-full min-h-[70vh] flex items-center justify-center bg-gray-50 px-6 py-16 md:py-24'>
+        <div className='max-w-6xl w-full flex flex-col items-center text-center'>
+          <h1 className='text-4xl md:text-5xl lg:text-6xl font-bold mb-6'>
+            Inspiring Locations to Lodge
+          </h1>
+          <p className='text-gray-600 max-w-2xl mb-8 md:text-lg'>
+            Découvrez des hébergements exceptionnels dans les destinations les
+            plus prisées du monde entier.
+          </p>
+          <SearchBar />
+          <div className='mt-8'>
+            <button className='bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition-colors'>
+              Show Top-Rated Villas
+            </button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Statistiques */}
+      <section className='w-full py-12 bg-white'>
+        <div className='max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between'>
+          <div className='text-center md:text-left mb-6 md:mb-0'>
+            <h2 className='text-3xl font-bold'>2,000+ Unique Places</h2>
+            <p className='text-gray-600 mt-2'>
+              Curated for l&apos;excellence et le confort
+            </p>
+          </div>
+          <div className='flex space-x-8'>
+            <div className='text-center'>
+              <span className='block text-2xl font-bold'>98%</span>
+              <span className='text-gray-600'>Taux de satisfaction</span>
+            </div>
+            <div className='text-center'>
+              <span className='block text-2xl font-bold'>50+</span>
+              <span className='text-gray-600'>Pays</span>
+            </div>
+            <div className='text-center'>
+              <span className='block text-2xl font-bold'>10k+</span>
+              <span className='text-gray-600'>Clients satisfaits</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Propriétés populaires */}
+      <section className='w-full py-16 px-6'>
+        <div className='max-w-6xl mx-auto'>
+          <h2 className='text-3xl font-bold mb-8'>Hébergements populaires</h2>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+            {properties.map(property => (
+              <PropertyCard key={property.id} {...property} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Stories */}
+      <section className='w-full py-12 bg-gray-50 px-6'>
+        <div className='max-w-6xl mx-auto'>
+          <h2 className='text-3xl font-bold mb-8'>
+            Stories d&apos;Inspiration
+          </h2>
+          <div className='flex space-x-8 overflow-x-auto pb-4'>
+            {stories.map((story, index) => (
+              <StoryCircle key={index} {...story} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Sections de destination */}
+      <section className='w-full py-16 px-6'>
+        <div className='max-w-6xl mx-auto'>
+          <h2 className='text-3xl font-bold mb-8'>Destinations exclusives</h2>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+            <FeatureCard
+              imageUrl='https://picsum.photos/id/164/800/600'
+              title='Évasions désertiques'
+              description='Découvrez nos hébergements luxueux au milieu des paysages désertiques à couper le souffle.'
+              link='/desert-escapes'
+            />
+            <FeatureCard
+              imageUrl='https://picsum.photos/id/143/800/600'
+              title="Paradis d'île privée"
+              description="Réservez votre séjour dans l'une de nos villas exclusives sur des îles privées."
+              link='/island-paradise'
+            />
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
