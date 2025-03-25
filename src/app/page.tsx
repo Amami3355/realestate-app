@@ -23,7 +23,7 @@ export default function Home() {
     <div className='flex flex-col w-full'>
       <div className='flex flex-col lg:flex-row lg:gap-8'>
         {/* Colonne gauche - Texte et recherche */}
-        <div className='flex flex-col justify-center py-10 lg:py-16 lg:w-5/12'>
+        <div className='flex flex-col justify-center pt-0 pb-10 lg:py-16 lg:w-5/12'>
           <h1 className='text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6'>
             Inspiring
             <br />

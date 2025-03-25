@@ -5,7 +5,7 @@ import { Triangle } from 'lucide-react';
 
 const Header = () => {
   return (
-    <header className='w-full py-6 flex justify-between items-center'>
+    <header className='w-full py-6 mb-8 md:mb-12 flex justify-between items-center border-b border-gray-100 pb-6'>
       <div className='flex items-center'>
         {/* Logo */}
         <Link href='/' className='flex items-center mr-16'>
