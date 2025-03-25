@@ -5,15 +5,15 @@ import { Triangle } from 'lucide-react';
 
 const Header = () => {
   return (
-    <header className='w-full py-5 flex justify-between items-center'>
+    <header className='w-full py-6 flex justify-between items-center'>
       <div className='flex items-center'>
         {/* Logo */}
-        <Link href='/' className='flex items-center mr-12'>
+        <Link href='/' className='flex items-center mr-16'>
           <Triangle className='h-6 w-6 fill-black' />
         </Link>
 
         {/* Navigation */}
-        <nav className='hidden md:flex items-center space-x-8'>
+        <nav className='hidden md:flex items-center space-x-10'>
           <Link
             href='/cabins-cottages'
             className='text-black text-sm tracking-wider hover:text-gray-700 transition-colors'
@@ -36,7 +36,7 @@ const Header = () => {
       </div>
 
       {/* Sign In Button */}
-      <button className='bg-black text-white text-sm tracking-wider px-5 py-2 rounded-full'>
+      <button className='bg-black text-white text-xs tracking-wider px-5 py-2 rounded-full'>
         SIGN IN
       </button>
     </header>
