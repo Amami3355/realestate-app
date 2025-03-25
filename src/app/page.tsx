@@ -52,14 +52,18 @@ export default function Home() {
 
           <div className='absolute inset-0 bg-black/20'></div>
 
-          <div className='absolute top-1/2 right-0 transform -translate-y-1/2 max-w-sm text-center p-8'>
-            <h2 className='text-2xl md:text-3xl font-semibold text-white mb-5 text-right'>
+          {/* Texte en haut à gauche */}
+          <div className='absolute top-10 left-10 max-w-md'>
+            <h2 className='text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-5 text-left leading-tight'>
               Exceptional Properties Located in Stunning Surroundings
             </h2>
+          </div>
 
-            <button className='ml-auto bg-white text-black rounded-full px-6 py-3 flex items-center justify-between w-auto min-w-[220px] whitespace-nowrap group'>
+          {/* Bouton en bas à gauche */}
+          <div className='absolute bottom-10 left-10'>
+            <button className='bg-white text-black rounded-full px-8 py-4 flex items-center justify-between w-auto min-w-[240px] whitespace-nowrap group text-base font-medium'>
               <span>Show Top-Rated Villas</span>
-              <ArrowRight className='h-5 w-5 ml-3 group-hover:translate-x-1 transition-transform' />
+              <ArrowRight className='h-6 w-6 ml-4 group-hover:translate-x-1 transition-transform' />
             </button>
           </div>
         </div>
