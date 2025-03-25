@@ -9,7 +9,7 @@ export default function Home() {
       <div className='grid grid-cols-12 gap-x-20 gap-y-4'>
         {/* Première ligne - Titre et Description */}
         <div className='col-span-5'>
-          <h1 className='text-[96px] font-bold leading-[1.1] mb-8'>
+          <h1 className='text-[70px] font-bold leading-[1.1] mb-8'>
             Inspiring
             <br />
             Locations
