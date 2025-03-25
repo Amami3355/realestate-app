@@ -98,31 +98,35 @@ export default function Home() {
           </div>
 
           {/* Section des locations */}
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10'>
             {/* Première location */}
             <div className='space-y-4'>
-              <h3 className='text-2xl md:text-3xl'>
+              <h3 className='text-2xl md:text-3xl font-medium'>
                 Recommended
                 <br />
                 Places
               </h3>
-              <LocationCard
-                imageUrl='https://picsum.photos/id/164/800/600'
-                title='Desert Escapes'
-              />
+              <div className='w-full max-w-md mx-auto md:mx-0'>
+                <LocationCard
+                  imageUrl='https://picsum.photos/id/164/800/800'
+                  title='Desert Escapes'
+                />
+              </div>
             </div>
 
             {/* Deuxième location */}
             <div className='space-y-4'>
-              <h3 className='text-2xl md:text-3xl'>
+              <h3 className='text-2xl md:text-3xl font-medium'>
                 Private Island
                 <br />
                 Rentals
               </h3>
-              <LocationCard
-                imageUrl='https://picsum.photos/id/143/800/600'
-                title='Island Paradise'
-              />
+              <div className='w-full max-w-md mx-auto md:mx-0'>
+                <LocationCard
+                  imageUrl='https://picsum.photos/id/143/800/800'
+                  title='Island Paradise'
+                />
+              </div>
             </div>
           </div>
         </div>

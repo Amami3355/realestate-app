@@ -10,7 +10,7 @@ interface LocationCardProps {
 
 const LocationCard = ({ imageUrl, title }: LocationCardProps) => {
   return (
-    <div className='relative w-full h-[220px] rounded-3xl overflow-hidden group'>
+    <div className='relative w-full aspect-square rounded-3xl overflow-hidden group'>
       <Image
         src={imageUrl}
         alt={title}
